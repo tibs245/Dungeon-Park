@@ -40,6 +40,7 @@ public class Interaction extends JFrame implements ActionListener{
 		this.nbrMonstre=nbrMonstre;
 		this.infoVie = new JLabel[nbrMonstre+nbrPersonnage];
 		this.infoTour = new JLabel[nbrMonstre+nbrPersonnage];
+		int hauteurInfo;
 		
 		back = new JButton("Back");		
 		play = new JButton("Pause");		
@@ -55,7 +56,15 @@ public class Interaction extends JFrame implements ActionListener{
 		
 		
 		infoJeu.setLayout(new GridLayout(nbrMonstre+nbrPersonnage+1,4));
-		this.setSize(400,75+50*nbrPersonnage+nbrMonstre);
+		
+		if ( nbrPersonnage < 10 )
+			hauteurInfo = 50;
+		else if ( nbrPersonnage < 20 )
+			hauteurInfo = 35;
+		else
+			hauteurInfo = 25;
+			
+			this.setSize(400,75+hauteurInfo*nbrPersonnage+nbrMonstre);
 		
 		infoJeu.add(new JLabel("Nom :"));
 		infoJeu.add(new JLabel("Espece :"));

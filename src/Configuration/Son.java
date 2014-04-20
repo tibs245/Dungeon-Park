@@ -25,9 +25,8 @@ public class Son extends Thread {
     }
  
     public void run() {
-    	ClassLoader classLoader = getClass().getClassLoader();
     	
-        File soundFile = new File(classLoader.getResource("/Jeu/musique/" + filename).getFile());
+File soundFile = new File(this.getClass().getClassLoader().getResource("Jeu/musique/" + filename).getFile());
         if (!soundFile.exists()) {
             System.err.println("Wave file not found: " + filename);
             return;

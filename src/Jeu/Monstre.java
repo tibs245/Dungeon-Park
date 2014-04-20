@@ -27,7 +27,7 @@ public class Monstre extends Personnage {		// Début de la classe Personnage
 		
 		
 	public void mange() {								// Méthode qui permet de manger les enfants s'il y en as dans les parages 
-		Thread playWave=new Son("musique/mort.wav");			// A chaque enfant mangé on joue un son qui préviens l'utilisateur 
+		Thread playWave=new Son("mort.wav");			// A chaque enfant mangé on joue un son qui préviens l'utilisateur 
         playWave.start();								// Start permet de le jour au dessus on le déclare et l'initialise 
 		nombreEnfantManger++;							// Le nombre d'nefant mangé augmente de un 
 		this.vie += 20;									// La vie du monstre augmente de 20 à chaqeu enfant mangé 

@@ -2,7 +2,6 @@ package Jeu;			// Contenu dans le package "Jeu"
 
 
 import java.awt.Image;  		// Toutes les bibliothèques importées. 
-import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -29,7 +28,7 @@ public class Case implements AffichageDePlateau.PlateauCase { 		// Début de la 
 		this.vide = vide;															// On donne à la variable la valeur voulue 
 		
 		try {																		// On essaye de lire l'image dans nos fichier avec le bloc Try/Catch
-			this.image = ImageIO.read(new File("images/" + image));					// Les images sont contenues dans le dossier image a la racine du projet 
+			this.image = ImageIO.read(this.getClass().getResource("/Jeu/image/" + image));					// Les images sont contenues dans le dossier image a la racine du projet 
 			this.imagePath = image;													// On retient le chemin de l'image 
 		} catch (final IOException e) {												// Si cela ne marche pas on renvoi une erreur 
 			e.printStackTrace();

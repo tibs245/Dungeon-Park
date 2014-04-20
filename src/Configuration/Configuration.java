@@ -56,7 +56,7 @@ public class Configuration extends JFrame implements  ActionListener {
 	public void affMenuPrincipal() {
 		
 		accueil.setBackground(new Color(0,0,0));
-		accueil = new JLabel(new ImageIcon("images/Garde.jpg"));
+		accueil = new JLabel(new ImageIcon(this.getClass().getResource("/Configuration/image/Garde.jpg")));
 		
 		accueil.add(newParty);												// We add the buttons
 		accueil.add(replayParty);
